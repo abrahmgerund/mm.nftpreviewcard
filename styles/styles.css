@@ -1,0 +1,170 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Outfit', sans-serif;
+    list-style: none;
+    background: var(--blue-950);
+}
+
+:root {
+    --blue-500: hsl(215, 51%, 70%);
+    --cyan-400: hsl(178, 100%, 50%);
+    --blue-950: hsl(217, 54%, 11%);
+    --blue-900: hsl(216, 50%, 16%);
+    --blue-800: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+}
+
+.section__wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 152px auto;
+}
+
+.card {
+    background: var(--blue-900);
+    max-width: 350px;
+    padding: 24px;
+    border-radius: 15px;
+}
+
+
+
+.card__image-container {
+    position: relative;
+    display: flex; /* */
+    cursor: pointer;
+}
+
+.card__image-main {
+    width: 100%;
+    border-radius: 10px;
+    opacity: 1;
+}
+
+.card__image-container::before {
+    position: absolute;
+    content: '';
+    inset: 0;
+    background: var(--cyan-400);
+    opacity: 0;
+    border-radius: 10px;
+    transition: 1s ease;
+}
+
+.card__image-container::after {
+    position: absolute;
+    content: '';
+    inset: 0;
+    background: url('../images/icon-view.svg') no-repeat center;
+    opacity: 0;
+    transition: 1s ease;
+}
+
+.card__image-container:hover::before {
+    opacity: 0.5;
+}
+
+.card__image-container:hover::after {
+    opacity: 1;
+}
+
+
+
+.card__name {
+    color: white;
+    font-weight: 400;
+    font-size: 21px;
+    margin-top: 24px;
+    letter-spacing: 0.8px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: 1s ease;
+}
+
+.card__name:hover {
+    color: var(--cyan-400);
+}
+
+.card__description {
+    color: var(--blue-500);
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 1.5;
+}
+
+.card__details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 23px;
+    padding-bottom: 23px;
+    border-bottom: 1px solid var(--blue-800);
+}
+
+.card__spec {
+    display: flex;
+    align-items: center;
+}
+
+.card__spec img {
+    margin-right: 8px;
+}
+
+.card__spec p {
+    color: var(--cyan-400);
+    font-size: 15.5px;
+    letter-spacing: 0.6px;
+}
+
+.card__date {
+    display: flex;
+    align-items: center;
+}
+
+.card__date img {
+    margin-right: 8px;
+}
+
+.card__date p {
+    color: var(--blue-500);
+    font-weight: 300;
+    font-size: 15.5px;
+    letter-spacing: 0.3px;
+}
+
+.card__profile {
+    display: flex;
+    align-items: center;
+    padding: 16px 0 8px;
+    margin-right: 12px;
+}
+
+.card__profile img {
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    border: 1px solid white;
+    margin-right: 16px;
+}
+
+.card__profile p {
+    color: var(--blue-500);
+    font-weight: 300;
+    letter-spacing: 0.2px;
+}
+
+.card__profile span {
+    color: white;
+    cursor: pointer;
+    transition: 1s ease;
+}
+
+.card__profile span:hover {
+    color: var(--cyan-400);
+}
